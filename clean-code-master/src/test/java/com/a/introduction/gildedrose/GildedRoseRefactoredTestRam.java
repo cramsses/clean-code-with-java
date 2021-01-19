@@ -28,9 +28,20 @@ public class GildedRoseRefactoredTestRam {
 		app.updateQuality();
 		
 		//VERIFY
-		assertEquals(DEFAULT_ITEM, app.items[0].name);
-		assertEquals(NOT_EXPIRED_SELLIN-1, app.items[0].sellIn);
-		assertEquals(DEFAULT_QUALITY - 1, app.items[0].quality);
+		Item expected = new Item(DEFAULT_ITEM, 
+				NOT_EXPIRED_SELLIN-1, DEFAULT_QUALITY-1);
+		//Expected vs Actual
+		assertItem(expected, app.items[0]);
+	}
+
+	/**
+	 * @param expected
+	 * @param actual
+	 */
+	private void assertItem(Item expected, Item actual) {
+		assertEquals(expected.name, actual.name);
+		assertEquals(expected.sellIn, actual.sellIn);
+		assertEquals(expected.quality, actual.quality);
 	}
 
 	/**
