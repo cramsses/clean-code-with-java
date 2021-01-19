@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class GildedRoseRefactoredTestRam {
+	private static final String DEFAULT_ITEM = "DEFAULT_ITEM";
 	private static final int DEFAULT_QUALITY = 3;
 	private static final int NOT_EXPIRED_SELLIN = 15;
 
@@ -18,13 +19,31 @@ public class GildedRoseRefactoredTestRam {
 	 */
 	@Test
 	public void testUpdateQualityDefault1() {
-		Item item = new Item("DEFAULT_ITEM", NOT_EXPIRED_SELLIN, DEFAULT_QUALITY);
-		Item[] items = new Item[] { item };
-		GildedRose app = new GildedRose(items);
+		//SETUP
+		GildedRose app = 
+				createGiledRoseWithOneItem(DEFAULT_ITEM, 
+						NOT_EXPIRED_SELLIN, DEFAULT_QUALITY);
+		
+		//INVOKE
 		app.updateQuality();
-		assertEquals("DEFAULT_ITEM", app.items[0].name);
+		
+		//VERIFY
+		assertEquals(DEFAULT_ITEM, app.items[0].name);
 		assertEquals(NOT_EXPIRED_SELLIN-1, app.items[0].sellIn);
 		assertEquals(DEFAULT_QUALITY - 1, app.items[0].quality);
+	}
+
+	/**
+	 * @param itemType
+	 * @param sellin
+	 * @param quality
+	 * @return
+	 */
+	private GildedRose createGiledRoseWithOneItem(String itemType, int sellin, int quality) {
+		Item item = new Item(itemType, sellin, quality);
+		Item[] items = new Item[] { item };
+		GildedRose app = new GildedRose(items);
+		return app;
 	}
 
 	/**
@@ -36,11 +55,11 @@ public class GildedRoseRefactoredTestRam {
 	 */
 	@Test
 	public void testUpdateQualityForExpiredItem() {
-		Item item = new Item("DEFAULT_ITEM", -1, 3);
+		Item item = new Item(DEFAULT_ITEM, -1, 3);
 		Item[] items = new Item[] { item };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
-		assertEquals("DEFAULT_ITEM", app.items[0].name);
+		assertEquals(DEFAULT_ITEM, app.items[0].name);
 		assertEquals(-2, app.items[0].sellIn);
 		assertEquals(1, app.items[0].quality);
 	}
