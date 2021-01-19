@@ -1,0 +1,20 @@
+
+********************** SECTION 1 GETTING STARTED WITH CLEAN CODE  **********************
+
+
+Step I : Understand Clarity of Code (Unit Tests)
+Step II: Focus on 4 Principles of Simple Design
+Step III: Get started with Refactoring
+Step IV : Understand TDD
+
+
+Download and import
+	zip from github
+	https://github.com/in28minutes/clean-code 
+	
+	import to IDE
+		Existing maven project
+	
+----------------
+Clarity of Code
+	
