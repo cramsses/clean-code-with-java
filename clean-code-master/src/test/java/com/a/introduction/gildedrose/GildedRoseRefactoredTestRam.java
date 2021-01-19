@@ -18,19 +18,16 @@ public class GildedRoseRefactoredTestRam {
 	 * 
 	 */
 	@Test
-	public void testUpdateQualityDefault1() {
+	public void unexpiredDefaultItem_qualityDecreasesBy1() {
 		//SETUP
 		GildedRose app = 
 				createGiledRoseWithOneItem(DEFAULT_ITEM, 
 						NOT_EXPIRED_SELLIN, DEFAULT_QUALITY);
-		
 		//INVOKE
 		app.updateQuality();
-		
 		//VERIFY
 		Item expected = new Item(DEFAULT_ITEM, 
 				NOT_EXPIRED_SELLIN-1, DEFAULT_QUALITY-1);
-		//Expected vs Actual
 		assertItem(expected, app.items[0]);
 	}
 
