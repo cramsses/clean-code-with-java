@@ -25,5 +25,12 @@ Clarity of Code
 			Refactor funtionality	--> Extract method and local variables. the inline variables.
 		2.- Invoke
 		3.- Verify
+		
+		Refactor name method
+			Clear name
+			Consistent nomenclature
+			avoid the begining with "test" word, it is no longer necesary.
+			
+		
 	
 	
