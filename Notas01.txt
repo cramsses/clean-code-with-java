@@ -17,4 +17,13 @@ Download and import
 	
 ----------------
 Clarity of Code
+
+	Gilded Rose Kata
+	Divide the test code in three parts:
+		1.- Setup	
+			Refactor constants		--> Extract constant
+			Refactor funtionality	--> Extract method and local variables. the inline variables.
+		2.- Invoke
+		3.- Verify
+	
 	
