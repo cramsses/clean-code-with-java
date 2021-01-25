@@ -31,6 +31,23 @@ Clarity of Code
 			Consistent nomenclature
 			avoid the begining with "test" word, it is no longer necesary.
 			
-		
+----------------
+Simple Design
+
+Why?
+	Agile and ExP
+	Design vs Architecture
+	
+4 Principles
+	- Run all tests
+	- Minimize Duplication
+	- Maximize Clarity
+	- Keep it small
+
+
+
+	
+	
+
 	
 	
