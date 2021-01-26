@@ -11,9 +11,14 @@ public class StudentHelperRefactoredRam {
 	* Except for Maths where the upper limit is increased by 10.
 	*/
 	public boolean isGradeB(int marks, boolean isMaths) {
-		return isMaths ? 
-				marks>=GRADE_B_lOWER_LIMIT && marks<=GRADE_B_UPPER_LIMIT+GRADE_B_EXTRA_LIMIT_FOR_MATHS : 
-				marks>=51 && marks<=GRADE_B_UPPER_LIMIT; 
+		
+		
+		
+		int upperLimit = isMaths ?  
+					GRADE_B_UPPER_LIMIT+GRADE_B_EXTRA_LIMIT_FOR_MATHS:
+					GRADE_B_UPPER_LIMIT;
+		
+		return  marks>=GRADE_B_lOWER_LIMIT && marks<= upperLimit; 
 	}
 
 	/* PROBLEM 2 */
