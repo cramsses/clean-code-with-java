@@ -33,29 +33,6 @@ Clarity of Code
 			
 ----------------
 
-********************** SECTION 2 GETTING STARTED WITH 4 PRINCIPLES OF SIMPLE DESIGN  **********************
-
-Simple Design
-
-Why?
-	Agile and ExP
-		- Focus on TODAY'S Requirements
-		- Change is EXPECTED
-		- 
-	Design vs Architecture
-		- Architecture 	--> Difficult to change
-		- Design		--> Esier to change
-	
-4 Principles
-	- Run all tests
-	- Minimize Duplication
-	- Maximize Clarity
-	- Keep it small
-
-
-
-	
-	
 
 	
 	
