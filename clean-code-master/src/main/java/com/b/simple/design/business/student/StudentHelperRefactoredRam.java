@@ -3,11 +3,8 @@ public class StudentHelperRefactoredRam {
 
 	private static final int EXTRA_MARK_FOR_MATHS = 5;
 
-	private static final int UPPER_LIMIT_FOR_B_GRADE = 90;
-
-	private static final int LOWER_LIMIT_FOR_B_GRADE = 50;
-
-	private static final int LOWER_LIMIT_FOR_A_GRADE = 90;
+	private static final int LOWER_LIMIT_FOR_B_GRADE = 51;
+	private static final int LOWER_LIMIT_FOR_A_GRADE = 91;
 	
 	private static final int GRADE_B_EXTRA_LIMIT_FOR_MATHS = 10;
 	private static final int GRADE_B_UPPER_LIMIT = 80;
@@ -34,27 +31,20 @@ public class StudentHelperRefactoredRam {
 	*/
 
 	public String getGrade(int mark, boolean isMaths) {
-		String grade = "C";
 		
-		if (isGradeA(mark, isMaths))
-			grade = "A";
-		else if (isBGrade(mark, isMaths)) {
-			grade = "B";
+		int extraLimit = isMaths?EXTRA_MARK_FOR_MATHS:0;
+		
+		if (mark >= LOWER_LIMIT_FOR_A_GRADE+extraLimit)
+			return "A";
+		
+		
+		if (mark >= LOWER_LIMIT_FOR_B_GRADE+extraLimit) {
+			return "B";
 		}
-		return grade;
+		
+		return "C";
 	}
 
-	private boolean isGradeA(int mark, boolean isMaths) {
-		int lowerLimitForAGrade = isMaths ? LOWER_LIMIT_FOR_A_GRADE+EXTRA_MARK_FOR_MATHS
-				: LOWER_LIMIT_FOR_A_GRADE;
-		return mark > lowerLimitForAGrade;
-	}
-
-	private boolean isBGrade(int mark, boolean isMaths) {
-		int lowerLimitGradeB = isMaths ? LOWER_LIMIT_FOR_B_GRADE+EXTRA_MARK_FOR_MATHS
-				: LOWER_LIMIT_FOR_B_GRADE;
-		return mark > lowerLimitGradeB && mark < UPPER_LIMIT_FOR_B_GRADE;
-	}
 
 	
 	
