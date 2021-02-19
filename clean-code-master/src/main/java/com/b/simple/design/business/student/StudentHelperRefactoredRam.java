@@ -1,6 +1,8 @@
 package com.b.simple.design.business.student;
 public class StudentHelperRefactoredRam {
 
+	private static final int EXTRA_LIMIT_FOR_MATH_QUALIFY = 5;
+
 	private static final int EXTRA_MARK_FOR_MATHS = 5;
 
 	private static final int LOWER_LIMIT_FOR_B_GRADE = 51;
@@ -66,11 +68,36 @@ public class StudentHelperRefactoredRam {
     */
         
     public String willQualifyForQuiz(int marks1, int marks2, boolean isMaths) {
-        if ((isMaths ? marks1 <= 25 : marks1 <= 20)
-                || (isMaths ? marks2 <= 25 : marks2 <= 20)) return "NO";
-        if ((isMaths ? marks1 >= 85 : marks1 >= 80)
-                || (isMaths ? marks2 >= 85 : marks2 >= 80)) return "YES";
+    	
+    	
+        if (isNotGood(marks1, isMaths)
+                || isNotGood(marks2, isMaths)) return "NO";
+		
+		if (isVeryGood(marks1, isMaths)
+                || isVeryGood(marks2, isMaths)) return "YES";
+		
         return "MAYBE";
-    }	
+    }
+
+	private boolean isVeryGood(int marks, boolean isMaths) {
+		int extraLimit= isMaths ? EXTRA_LIMIT_FOR_MATH_QUALIFY : 0;
+		return  marks >= 80 + extraLimit;
+	}
+
+	private boolean isNotGood(int marks, boolean isMaths) {
+		int extraLimit= isMaths ? EXTRA_LIMIT_FOR_MATH_QUALIFY : 0;
+		return  marks <= 20 + extraLimit;
+	}	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
