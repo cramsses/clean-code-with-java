@@ -25,6 +25,18 @@ Why?
 
 
 
+Problems
+	
+	STUDENT HELPER
+	Problem 1
+		Clarity
+	Problem 2
+		Keep it small
+	Problem 3
+		Minimize Duplication
+
+
+Naming
 	
 	
 
