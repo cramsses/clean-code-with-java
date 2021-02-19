@@ -1,0 +1,6 @@
+
+
+Step I : Understand Clarity of Code (Unit Tests)
+Step II: Focus on 4 Principles of Simple Design
+Step III: Get started with Refactoring
+Step IV : Understand TDD

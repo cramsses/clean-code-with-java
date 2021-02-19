@@ -1,11 +1,11 @@
 
-********************** SECTION 1 GETTING STARTED WITH CLEAN CODE  **********************
-
-
 Step I : Understand Clarity of Code (Unit Tests)
 Step II: Focus on 4 Principles of Simple Design
 Step III: Get started with Refactoring
 Step IV : Understand TDD
+
+
+********************** SECTION 1 GETTING STARTED WITH CLEAN CODE  **********************
 
 
 Download and import
@@ -32,11 +32,19 @@ Clarity of Code
 			avoid the begining with "test" word, it is no longer necesary.
 			
 ----------------
+
+********************** SECTION 2 GETTING STARTED WITH 4 PRINCIPLES OF SIMPLE DESIGN  **********************
+
 Simple Design
 
 Why?
 	Agile and ExP
+		- Focus on TODAY'S Requirements
+		- Change is EXPECTED
+		- 
 	Design vs Architecture
+		- Architecture 	--> Difficult to change
+		- Design		--> Esier to change
 	
 4 Principles
 	- Run all tests
