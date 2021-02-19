@@ -1,6 +1,14 @@
 package com.b.simple.design.business.student;
 public class StudentHelperRefactoredRam {
 
+	private static final int EXTRA_MARK_FOR_MATHS = 5;
+
+	private static final int UPPER_LIMIT_FOR_B_GRADE = 90;
+
+	private static final int LOWER_LIMIT_FOR_B_GRADE = 50;
+
+	private static final int LOWER_LIMIT_FOR_A_GRADE = 90;
+	
 	private static final int GRADE_B_EXTRA_LIMIT_FOR_MATHS = 10;
 	private static final int GRADE_B_UPPER_LIMIT = 80;
 	private static final int GRADE_B_lOWER_LIMIT = 51;
@@ -37,17 +45,20 @@ public class StudentHelperRefactoredRam {
 	}
 
 	private boolean isGradeA(int mark, boolean isMaths) {
-		int lowerLimitForAGrade = isMaths ? 95
-				: 90;
+		int lowerLimitForAGrade = isMaths ? LOWER_LIMIT_FOR_A_GRADE+EXTRA_MARK_FOR_MATHS
+				: LOWER_LIMIT_FOR_A_GRADE;
 		return mark > lowerLimitForAGrade;
 	}
 
 	private boolean isBGrade(int mark, boolean isMaths) {
-		int lowerLimitGradeB = isMaths ? 55
-				: 50;
-		return mark > lowerLimitGradeB && mark < 90;
+		int lowerLimitGradeB = isMaths ? LOWER_LIMIT_FOR_B_GRADE+EXTRA_MARK_FOR_MATHS
+				: LOWER_LIMIT_FOR_B_GRADE;
+		return mark > lowerLimitGradeB && mark < UPPER_LIMIT_FOR_B_GRADE;
 	}
 
+	
+	
+	
     /*  PROBLEM 3
      * You and your Friend are planning to enter a Subject Quiz.
      * However, there is a marks requirement that you should attain to qualify.
